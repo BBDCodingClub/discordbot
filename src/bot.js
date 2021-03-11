@@ -6,7 +6,7 @@ const { Client } = require('discord.js');
 const client = new Client();
 
 client.login(process.env.SAGE_TOKEN);
-client.on('ready', onReady );
+//client.on('ready', onReady );
 client.on('messageReactionAdd', addRole);
 client.on('messageReactionRemove', removeRole);
 
@@ -32,8 +32,9 @@ client.on('guildMemberAdd', member => {
 //_________________________________
             //bpbuch's code
 //_________________________________
+/*
   async function onReady() {
-    const channel = client.channels.find((channel) => channel.name === config.channel);
+    const channel = client.channels.find( ch => ch.name === config.channel);
   
     // channel will not contain messages after it is found
     try {
@@ -47,7 +48,7 @@ client.on('guildMemberAdd', member => {
   
     console.log(`Watching message '${config.message_id}' for reactions...`)
   }
-  
+  */
 // TO ADD ROLES
 async function addRole({message, _emoji}, user) {
   if (user.bot || message.id !== config.message_id) {
