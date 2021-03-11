@@ -6,7 +6,7 @@ const { Client } = require('discord.js');
 const client = new Client();
 
 client.login(process.env.SAGE_TOKEN);
-client.on('ready', OnReady);
+client.on('ready', onReady );
 client.on('messageReactionAdd', addRole);
 client.on('messageReactionRemove', removeRole);
 
@@ -19,7 +19,6 @@ client.on('message', message => {
     }
   });
 
-//bpbuch's code
 client.on('guildMemberAdd', member => {
     
     const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
@@ -28,6 +27,11 @@ client.on('guildMemberAdd', member => {
     
     channel.send(`Welcome to the server, ${member}`);
   });
+
+
+//_________________________________
+            //bpbuch's code
+//_________________________________
   async function onReady() {
     const channel = client.channels.find((channel) => channel.name === config.channel);
   
