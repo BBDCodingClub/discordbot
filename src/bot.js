@@ -7,23 +7,15 @@ const client = new Client();
 client.login(process.env.SAGE_TOKEN);
 
 client.on('message', message => {
-    /*if (message.content === 'ping') {
-      // Send "pong" to the same channel
-      message.channel.send('pong');
-    }*/
     let msg = message.content.toLowerCase();
     switch(msg){
-      case 'ping': message.channel.send('pong');
+      case 'ping': message.channel.send('pong\n :ping_pong:');
       break;
-      case 'chai': message.channel.send('Yeh Lo Chai!');
+      case 'chai': message.channel.send('Yeh Lo Chai\n :coffee:');
       break;
-      case 'coffee': message.channel.send('Strong ya light ?');
+      case 'coffee': message.channel.send('Yeh Lo Coffee\n :coffee:');
       break;
-      case 'biskut': message.channel.send('Yeh Lo Butterbite');
-      break;
-      case 'strong': message.channel.send('Yeh Lo Bru!!');
-      break;
-      case 'light': message.channel.send('Yeh Lo Nescafe!');
+      case 'biskut': message.channel.send('Yeh Lo Butterbite\n:cookie:');
       break;
 
     }
@@ -37,5 +29,3 @@ client.on('guildMemberAdd', member => {
     
     channel.send(`Welcome to the server, ${member}`);
   });
-
-
