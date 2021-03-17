@@ -17,9 +17,9 @@ client.on('message', message => {
       break;
       case 'biskut': message.channel.send('Yeh Lo Butterbite\n:cookie:');
       break;
-      case 'hi': message.channel.send('ID Card kaha hai? \n:cookie:');
+      case 'hi': message.channel.send('ID Card kaha hai? \n:cop:');
       break;
-      case 'hello': message.channel.send('ID Card kaha hai? \n:cookie:');
+      case 'hello': message.channel.send('ID Card kaha hai? \n:cop:');
       break;
       case 'lol': message.channel.send('hansa bhi tha? \n:unamused:');
       break;
