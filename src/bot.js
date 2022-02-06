@@ -23,6 +23,8 @@ client.on('message', message => {
       break;
       case 'lol': message.channel.send('hansa bhi tha? \n:unamused:');
       break;
+      case 'ok': message.channel.send('Objection Killed!');
+      break;
     }
   });
 
