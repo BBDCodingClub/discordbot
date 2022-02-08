@@ -71,6 +71,8 @@ client.on("message", (message) => {
 
       case 'ok': message.channel.send('Objection Killed!');
       break;
+      case 'kaise ho': message.channel.send('Class me jao chup chap *_*');
+      break;
     }
   });
 
