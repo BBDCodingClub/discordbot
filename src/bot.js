@@ -12,6 +12,7 @@ const intents = ["GUILDS", "GUILD_MEMBERS"];
 const client = new Client();
 
 var prefix = "b!";
+var welcomeChannelID = "817805842774360077";
 
 // When the client is ready, run this code (only once)
 client.once("ready", () => {
@@ -25,7 +26,7 @@ client.on("guildMemberAdd", (member) => {
     .setDescription("Welcome to Official BBD Comunity Server 🎉!!!")
     .setColor("#38CC77");
   member.guild.channels.cache
-    .get("678966442552459324")
+    .get(welcomeChannelID)
     .send(welcomembed)
     .catch((err) => console.log(err));
 });
@@ -37,7 +38,7 @@ client.on("guildMemberRemove", (member) => {
     .setDescription("Sad! Let's just hope that they enjoyed their stay!!!")
     .setColor("#FF0000");
   member.guild.channels.cache
-    .get("678966442552459324")
+    .get(welcomeChannelID)
     .send(goodbyembed)
     .catch((err) => console.log(err));
 });
