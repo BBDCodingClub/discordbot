@@ -67,7 +67,18 @@ client.on("message", (message) => {
     case "lol":
       message.channel.send("hansa bhi tha? \n:unamused:");
       break;
-  }
-});
 
-client.login(process.env.SAGE_TOKEN);
+      case 'ok': message.channel.send('Objection Killed!');
+      break;
+    }
+  });
+
+client.on('guildMemberAdd', member => {
+    
+    const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+    
+    if (!channel) return;
+    
+    channel.send(`Welcome to the server, ${member}`);
+  });
+
