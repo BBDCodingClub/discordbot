@@ -12,6 +12,8 @@ const intents = ["GUILDS", "GUILD_MEMBERS"];
 const client = new Client();
 
 client.login(process.env.SAGE_TOKEN);
+
+
 var prefix = "b!";
 var welcomeChannelID = "817805842774360077";
 
