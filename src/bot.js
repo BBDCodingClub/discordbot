@@ -11,6 +11,7 @@ client.login(process.env.SAGE_TOKEN);
 var prefix = "b!";
 // Server Roles IDs
 var welcomeChannelID = "817805842774360077"; // 678599644456026165
+var selfRoleChannelID = "942355802306519100";
 var reactionFirstYear = "940175962610499604";
 var reactionSecondYear = "940175573760765973";
 var reactionThirdYear = "940164622936342619";
@@ -136,7 +137,7 @@ client.on("message", (message) => {
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
             if (!reaction.message.guild) return;
-            if (reaction.message.channel.id === "678599644456026165") {
+            if (reaction.message.channel.id === selfRoleChannelID) {
               switch (reaction.emoji.name) {
                 case "1️⃣":
                   await reaction.message.guild.members.cache
