@@ -10,7 +10,7 @@ client.login(process.env.SAGE_TOKEN);
 
 var prefix = "b!";
 // Server Roles IDs
-var welcomeChannelID = "678599644456026165";
+var welcomeChannelID = "817805842774360077"; // 678599644456026165
 var reactionFirstYear = "940175962610499604";
 var reactionSecondYear = "940175573760765973";
 var reactionThirdYear = "940164622936342619";
@@ -109,11 +109,19 @@ client.on("message", (message) => {
     case "b!reactyear":
       message.channel.send("reaction...");
       let embed = new Discord.MessageEmbed()
-        .setTitle("Reactions Roles")
-        .setDescription("React to get a role!")
-        .setColor("BLUE");
+        .setTitle("📌 Reactions Roles 📌")
+        .setDescription("Select your Year...")
+        .addFields(
+          { name: "1️⃣", value: "1st Year" },
+          { name: "2️⃣", value: "2nd Year" },
+          { name: "3️⃣", value: "3rd Year" },
+          { name: "4️⃣", value: "4th Year" },
+          { name: "5️⃣", value: "Passout" }
+        )
+        .setColor("#0099ff")
+        .setTimestamp();
       message.channel.send(embed).then((m) => {
-        let reactions = ["😂", "😎", "😍", "🤑"];
+        let reactions = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣"];
         for (let i in reactions) {
           m.react(reactions[i]);
         }
@@ -125,14 +133,10 @@ client.on("message", (message) => {
           try {
             const reaction = await potentialPartialReaction.fetch();
             const user = await potentialPartialUser.fetch();
-
             if (reaction.message.partial) await reaction.message.fetch();
             if (reaction.partial) await reaction.fetch();
-            // if (user.bot) return;
             if (!reaction.message.guild) return;
             if (reaction.message.channel.id === "678599644456026165") {
-              console.log("right channel");
-              console.log("emoji id", reaction.emoji);
               switch (reaction.emoji.name) {
                 case "1️⃣":
                   await reaction.message.guild.members.cache
@@ -163,17 +167,12 @@ client.on("message", (message) => {
                   break;
               }
             }
-
-            console.log(message.channel.id);
-            // console.log("<<< REACTION >>>", reaction);
-            // console.log("<<< USER >>>", user);
           } catch (err) {
             console.log(err);
           }
-
-          // can use reaction and user here!
         }
       );
+
       break;
   }
 });
